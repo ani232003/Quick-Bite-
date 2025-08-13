@@ -1,0 +1,76 @@
+.burger-card {
+    border: none;
+    transition: 0.3s;
+    height: 100%;
+}
+
+.burger-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.img-box {
+    overflow: hidden;
+}
+
+.card-img {
+    transition: 0.3s;
+}
+
+.img-box:hover .card-img {
+    transform: scale(1.1);
+}
+
+.card-Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-rating {
+    font-weight: bold;
+    color: #f39c12;
+}
+
+.heart-icon {
+    color: #ccc;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.heart-icon:hover {
+    color: red;
+}
+
+.card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.card-desc {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-price {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.heart-icon {
+    color: #ccc;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.heart-icon:hover {
+    color: red;
+}

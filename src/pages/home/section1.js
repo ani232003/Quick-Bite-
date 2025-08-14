@@ -11,25 +11,25 @@ const Section = () => {
                 <Row>
                     <Col lg={7} className='mb-5 mb-lg-0'>
                         <div className='position-relative'>
-                            <img src={Burger} alt="Burger" className="burger-img"/>
+                            <img src={Burger} alt="Burger" className="burger-img" />
                             <div className='price_badge'>
                                 <div className='badge_test p-5'>
-                                    <h4 className='h4_xs'>only</h4>
-                                    <h4 className='h4_lg'>10.99$</h4>
+                                    <h4 className='h4_xs'>Only</h4>
+                                    <h4 className='h4_lg'>$10.99</h4>
                                 </div>
                             </div>
                         </div>
                     </Col>
                     <Col lg={5}>
                         <div className='hero_text text-center'>
-                            <h1 className='text-white'>New Burger</h1>
-                            <h2 className='text-white'>With Onion</h2>
+                            <h1 className='text-white'>Smoky Onion Burger</h1>
+                            <h2 className='text-white'>Grilled to Perfection</h2>
                             <p className='text-white pt-2 pb-4'>
-                                Feugiat primis ligula risus auctor laoreet augue egestas mauris
-                                viverra tortor in iaculis pretium at magna mauris ipsum primis
-                                rhoncus feugiat
+                                Sink your teeth into our newest flame-grilled creation — stacked high
+                                with crispy onions, melty cheese, and bold smoky sauce. It's big, it's juicy,
+                                and it's waiting for you.
                             </p>
-                            <Link to="/" className="btn Order_now">Order now</Link>
+                            <Link to="/" className="btn Order_now">Order Now</Link>
                         </div>
                     </Col>
                 </Row>

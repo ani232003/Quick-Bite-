@@ -11,18 +11,18 @@ const About = () => {
     const mockData = [
         {
             image: Pizza,
-            title: "Original",
-            paragraph: `Porta semper lacus cursus, feugiat primis ultrice a ligula risus auctor an tempus feugiat dolor lacinia cubilia curae integer orci congue and metus integer primis in integer metus`,
+            title: "Fresh Ingredients",
+            paragraph: `Our burgers start with fresh, locally sourced ingredients. From the buns to the beef, everything is selected to give you the ultimate juicy, flavorful bite every single time.`,
         },
         {
             image: Salad,
-            title: "Qualty Foods",
-            paragraph: `Porta semper lacus cursus, feugiat primis ultrice a ligula risus auctor an tempus feugiat dolor lacinia cubilia curae integer orci congue and metus integer primis in integer metus`,
+            title: "Made With Love",
+            paragraph: `Every burger is handcrafted by our passionate chefs who truly care about quality. No frozen patties, no shortcuts – just real food made with real heart.`,
         },
         {
             image: Delivery,
-            title: "Fastest Delivery",
-            paragraph: `Porta semper lacus cursus, feugiat primis ultrice a ligula risus auctor an tempus feugiat dolor lacinia cubilia curae integer orci congue and metus integer primis in integer metus`,
+            title: "Fast & Hot Delivery",
+            paragraph: `We don’t just deliver fast – we deliver hot, fresh, and right on time. Whether it's lunch, dinner, or midnight cravings, we’ve got your back.`,
         },
     ];
 
@@ -32,11 +32,11 @@ const About = () => {
                 <Container>
                     <Row>
                         <Col lg={{ span: 8, offset: 2 }} className="text-center">
-                            <h2>The burger tastes better when you eat it with your family</h2>
+                            <h2>Burgers taste better when shared with the people you love</h2>
                             <p>
-                                Porta semper lacus cursus, feugiat primis ultrice a ligula risus
-                                auctor an tempus feugiat dolor lacinia cubilia curae integer
-                                orci congue and metus integer primis in integer metus
+                                Whether you're feeding your family, sharing with friends, or just
+                                treating yourself — our burgers are built to satisfy every craving.
+                                Fast, fresh, and full of flavor.
                             </p>
                             <Link to="/" className="btn order_now">Explore full menu</Link>
                         </Col>

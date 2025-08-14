@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+.pay_section {
+    background: #fffaf3;
+    padding: 40px 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+form {
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+}
+
+.pay_col {
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 20px;
+    color: #e67e22;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.inputBox {
+    margin-bottom: 15px;
+}
+
+.inputBox label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.inputBox input,
+.inputBox select {
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 10px 12px;
+    font-size: 15px;
+    border-radius: 5px;
+    outline: none;
+}
+
+.inputBox input:focus,
+.inputBox select:focus {
+    border-color: #e67e22;
+}
+
+.inputBox img {
+    height: 34px;
+    margin-top: 5px;
+    filter: drop-shadow(0 0 1px #000);
+}
+
+.submit_btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 17px;
+    background: #e67e22;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit_btn:hover {
+    background: #cf711f;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    display: none;
+}

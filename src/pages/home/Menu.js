@@ -2,6 +2,9 @@
 import React from 'react';
 import Cards from '../../Components/Card';
 import { Container, Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
+// Images
 import Image1 from "../../Assets/Food_Assets/assets/menu/burger-11.jpg";
 import Image2 from "../../Assets/Food_Assets/assets/menu/burger-12.jpg";
 import Image3 from "../../Assets/Food_Assets/assets/menu/burger-13.jpg";
@@ -9,8 +12,7 @@ import Image4 from "../../Assets/Food_Assets/assets/menu/burger-14.jpg";
 import Image5 from "../../Assets/Food_Assets/assets/menu/burger-15.jpg";
 import Image6 from "../../Assets/Food_Assets/assets/menu/burger-16.jpg";
 import Image7 from "../../Assets/Food_Assets/assets/menu/burger-17.jpg";
-import Image8 from "../../Assets/Food_Assets/assets/menu/burger-18.jpg"
-import { Link } from 'react-router-dom';
+import Image8 from "../../Assets/Food_Assets/assets/menu/burger-18.jpg";
 
 const Menu = () => {
 
@@ -19,11 +21,11 @@ const Menu = () => {
 
         for (let i = 0; i < 5; i++) {
             if (rating >= 1) {
-                stars.push(<i key={i} className="bi bi-star-fill text-warning"></i>); 
+                stars.push(<i key={i} className="bi bi-star-fill text-warning"></i>);
             } else if (rating >= 0.5) {
-                stars.push(<i key={i} className="bi bi-star-half text-warning"></i>); 
+                stars.push(<i key={i} className="bi bi-star-half text-warning"></i>);
             } else {
-                stars.push(<i key={i} className="bi bi-star text-warning"></i>); 
+                stars.push(<i key={i} className="bi bi-star text-warning"></i>);
             }
             rating -= 1;
         }
@@ -36,7 +38,7 @@ const Menu = () => {
             id: "0001",
             image: Image1,
             title: "Crispy Chicken",
-            paragraph: "Chicken breast, chilli sauce, tomatoes, pickles, coleslaw",
+            paragraph: "Crispy fried chicken, spicy mayo, tangy pickles, and creamy coleslaw.",
             rating: 5,
             price: 99.15,
         },
@@ -44,7 +46,7 @@ const Menu = () => {
             id: "0002",
             image: Image2,
             title: "Ultimate Bacon",
-            paragraph: "House patty, cheddar cheese, bacon, onion, mustard",
+            paragraph: "Beef patty, double cheddar, crispy bacon, grilled onions & mustard.",
             rating: 4.5,
             price: 99.32,
         },
@@ -52,31 +54,31 @@ const Menu = () => {
             id: "0003",
             image: Image3,
             title: "Black Sheep",
-            paragraph: "American cheese, tomato relish, avocado, lettuce, red onion",
+            paragraph: "Juicy lamb patty, avocado, tomato relish, lettuce, and red onion.",
             rating: 4,
             price: 69.15,
         },
         {
             id: "0004",
             image: Image4,
-            title: "Vegan Burger",
-            paragraph: "House patty, cheddar cheese, bacon, onion, mustard",
+            title: "Vegan Delight",
+            paragraph: "Plant-based patty, dairy-free cheese, grilled veggies & house sauce.",
             rating: 3.5,
             price: 99.25,
         },
         {
             id: "0005",
             image: Image5,
-            title: "Double Burger",
-            paragraph: "2 patties, cheddar cheese, mustard, pickles, tomatoes",
+            title: "Double Trouble",
+            paragraph: "Two beef patties, cheddar, mustard, tomatoes, pickles & attitude.",
             rating: 3.0,
             price: 59.25,
         },
         {
             id: "0006",
             image: Image6,
-            title: "Turkey Burger",
-            paragraph: "Turkey, cheddar cheese, onion, lettuce, tomatoes, pickles",
+            title: "Turkey Stack",
+            paragraph: "Lean turkey, sharp cheddar, lettuce, tomatoes & onion rings.",
             rating: 3,
             price: 79.18,
         },
@@ -84,7 +86,7 @@ const Menu = () => {
             id: "0007",
             image: Image7,
             title: "Smokey House",
-            paragraph: "patty, cheddar cheese, onion, lettuce, tomatoes, pickles",
+            paragraph: "Grilled patty, BBQ sauce, smoked cheddar, lettuce & pickles.",
             rating: 2.5,
             price: 99.19,
         },
@@ -92,61 +94,61 @@ const Menu = () => {
             id: "0008",
             image: Image8,
             title: "Classic Burger",
-            paragraph: "cheddar cheese, ketchup, mustard, pickles, onion",
+            paragraph: "Simple and satisfying – cheddar, ketchup, mustard & pickles.",
             rating: 2.0,
             price: 89.12,
         },
     ];
-    return (
-        <>
-            <section className='menu_section'>
-                <Container>
-                    <Row>
-                        <Col lg={{ span: 8, offset: 2 }}></Col>
-                        <h2>Our Creazy Burgers</h2>
-                        <p>
-                            Aliquam a augue suscipit, luctus neque purus ipsum neque undo
-                            dolor primis libero tempus, blandit a cursus varius luctus neque
-                            magna</p>
-                    </Row>
-                    <Row>
-                        {mockData.map((data, index) => {
-                            return (
-                                <Cards
-                                    key={index}
-                                    image={data.image}
-                                    rating={ratingsCount(data.rating)}
-                                    title={data.title}
-                                    paragraph={data.paragraph}
-                                    price={data.price}
-                                />
-                            );
-                        })}
-                    </Row>
-                    <Row className='pt-5'>
-                        <Col sm={6} lg={5}>
-                            <div className='ads_box ads_img1 mb-5 mb-md-0'>
-                                <h4 className='mb-0'>Get Your Free</h4>
-                                <h5>Chesse Fries</h5>
-                                <Link to="/" className='btn btn_red px-4 rounded-0'>
-                                    Learn More
-                                </Link>
-                            </div>
-                        </Col>
-                        <Col sm={6} lg={7}>
-                            <div className='ads_box ads_img2'>
-                                <h4 className='mb-0'>Get Your Free</h4>
-                                <h5>Chesse Fries</h5>
-                                <Link to="/" className='btn btn_red px-4 rounded-0'>
-                                    Learn More
-                                </Link>
-                            </div>
-                        </Col>
-                    </Row>
-                </Container>
-            </section>
-        </>
-    )
-}
 
-export default Menu
+    return (
+        <section className='menu_section'>
+            <Container>
+                <Row>
+                    <Col lg={{ span: 8, offset: 2 }} className="text-center">
+                        <h2>Our Crazy Burger Collection</h2>
+                        <p>
+                            From cheesy classics to bold, spicy bites — our burgers are crafted to satisfy every kind of craving. 
+                            Explore our mouth-watering menu and find your next favorite!
+                        </p>
+                    </Col>
+                </Row>
+
+                <Row>
+                    {mockData.map((data, index) => (
+                        <Cards
+                            key={index}
+                            image={data.image}
+                            rating={ratingsCount(data.rating)}
+                            title={data.title}
+                            paragraph={data.paragraph}
+                            price={data.price}
+                        />
+                    ))}
+                </Row>
+
+                <Row className='pt-5'>
+                    <Col sm={6} lg={5}>
+                        <div className='ads_box ads_img1 mb-5 mb-md-0'>
+                            <h4 className='mb-0'>Free Side Alert!</h4>
+                            <h5>Get Free Cheese Fries</h5>
+                            <Link to="/" className='btn btn_red px-4 rounded-0'>
+                                Learn More
+                            </Link>
+                        </div>
+                    </Col>
+                    <Col sm={6} lg={7}>
+                        <div className='ads_box ads_img2'>
+                            <h4 className='mb-0'>Fries on Us</h4>
+                            <h5>With Every Burger Combo</h5>
+                            <Link to="/" className='btn btn_red px-4 rounded-0'>
+                                Learn More
+                            </Link>
+                        </div>
+                    </Col>
+                </Row>
+            </Container>
+        </section>
+    );
+};
+
+export default Menu;

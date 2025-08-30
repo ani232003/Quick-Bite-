@@ -29,7 +29,7 @@ const Section = () => {
                                 with crispy onions, melty cheese, and bold smoky sauce. It's big, it's juicy,
                                 and it's waiting for you.
                             </p>
-                            <Link to="/" className="btn Order_now">Order Now</Link>
+                            <Link to="/menu" className="btn Order_now">Order Now</Link>
                         </div>
                     </Col>
                 </Row>

@@ -2,11 +2,12 @@ import React from 'react';
 import { Card, Col, Button } from 'react-bootstrap';
 import "../styles/CardStyle.css";
 
-const Cards = ({ image, rating, title, paragraph, price }) => {
+
+const Cards = ({ image, rating, title, paragraph, price, onAddToCart }) => {
     return (
         <Col lg={3} md={4} sm={6} xs={12} className="mb-4 d-flex">
             <Card className="burger-card h-100 d-flex flex-column">
-             
+              
                 <div className="img-box">
                     <Card.Img 
                         variant="top" 
@@ -16,7 +17,7 @@ const Cards = ({ image, rating, title, paragraph, price }) => {
                     />
                 </div>
 
-             
+              
                 <Card.Body className="d-flex flex-column">
                     <div className="card-Header d-flex justify-content-between align-items-center">
                         <span className="card-rating">{rating}</span>
@@ -29,7 +30,12 @@ const Cards = ({ image, rating, title, paragraph, price }) => {
               
                     <div className="card-bottom d-flex justify-content-between align-items-center mt-auto">
                         <span className="card-price">${price}</span>
-                        <Button variant="outline-dark" size="sm">
+                        <Button 
+                            variant="outline-dark" 
+                            size="sm"
+                         
+                            onClick={onAddToCart}
+                        >
                             Add To Cart
                         </Button>
                     </div>

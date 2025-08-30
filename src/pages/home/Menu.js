@@ -1,8 +1,8 @@
-/* eslint-disable jsx-a11y/heading-has-content */
 import React from 'react';
 import Cards from '../../Components/Card';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { useCart } from '../../Components/CartContext';
 
 // Images
 import Image1 from "../../Assets/Food_Assets/assets/menu/burger-11.jpg";
@@ -15,6 +15,8 @@ import Image7 from "../../Assets/Food_Assets/assets/menu/burger-17.jpg";
 import Image8 from "../../Assets/Food_Assets/assets/menu/burger-18.jpg";
 
 const Menu = () => {
+
+    const { addToCart } = useCart();
 
     const ratingsCount = (rating) => {
         const stars = [];
@@ -122,6 +124,7 @@ const Menu = () => {
                             title={data.title}
                             paragraph={data.paragraph}
                             price={data.price}
+                            onAddToCart={() => addToCart(data)}
                         />
                     ))}
                 </Row>

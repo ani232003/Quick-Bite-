@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import { useState, useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase";
+import { CartProvider } from '../src/Components/CartContext.js';
 
 import Home from "./pages/home/Home";
 import About from "./pages/home/About";
@@ -28,24 +29,27 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      
-      <HeaderWrapper user={user} />
+  
+    <CartProvider>
+      <Router>
+        
+        <HeaderWrapper user={user} />
 
-      <Routes>
-        <Route path="/login" element={!user ? <Login /> : <Navigate to="/" replace />} />
-        <Route path="/signup" element={!user ? <Signup /> : <Navigate to="/" replace />} />
-        <Route path="/" element={user ? <Home /> : <Navigate to="/login" replace />} />
-        <Route path="/about" element={user ? <About /> : <Navigate to="/login" replace />} />
-        <Route path="/menu" element={user ? <Menu /> : <Navigate to="/login" replace />} />
-        <Route path="/shop" element={user ? <Shop /> : <Navigate to="/login" replace />} />
-        <Route path="/blog" element={user ? <Blog /> : <Navigate to="/login" replace />} />
-        <Route path="/contact" element={user ? <Contact /> : <Navigate to="/login" replace />} />
-        <Route path="/payment" element={user ? <Pay /> : <Navigate to="/login" replace />} />
-        <Route path="*" element={<Navigate to={user ? "/" : "/login"} replace />} />
-        <Route path="/cart" element={user ? <Cart /> : <Navigate to="/login" replace />} />
-      </Routes>
-    </Router>
+        <Routes>
+          <Route path="/login" element={!user ? <Login /> : <Navigate to="/" replace />} />
+          <Route path="/signup" element={!user ? <Signup /> : <Navigate to="/" replace />} />
+          <Route path="/" element={user ? <Home /> : <Navigate to="/login" replace />} />
+          <Route path="/about" element={user ? <About /> : <Navigate to="/login" replace />} />
+          <Route path="/menu" element={user ? <Menu /> : <Navigate to="/login" replace />} />
+          <Route path="/shop" element={user ? <Shop /> : <Navigate to="/login" replace />} />
+          <Route path="/blog" element={user ? <Blog /> : <Navigate to="/login" replace />} />
+          <Route path="/contact" element={user ? <Contact /> : <Navigate to="/login" replace />} />
+          <Route path="/payment" element={user ? <Pay /> : <Navigate to="/login" replace />} />
+          <Route path="*" element={<Navigate to={user ? "/" : "/login"} replace />} />
+          <Route path="/cart" element={user ? <Cart /> : <Navigate to="/login" replace />} />
+        </Routes>
+      </Router>
+    </CartProvider>
   );
 }
 

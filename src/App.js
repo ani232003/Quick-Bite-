@@ -10,6 +10,7 @@ import Shop from "./pages/home/Shop";
 import Blog from "./pages/home/blog";
 import Contact from "./pages/home/contact";
 import Pay from "./payment/payment.js";
+import Cart from "./pages/home/cart.js"
 
 import Login from "./auth/Login.js";
 import Signup from "./auth/sign.js";
@@ -42,6 +43,7 @@ function App() {
         <Route path="/contact" element={user ? <Contact /> : <Navigate to="/login" replace />} />
         <Route path="/payment" element={user ? <Pay /> : <Navigate to="/login" replace />} />
         <Route path="*" element={<Navigate to={user ? "/" : "/login"} replace />} />
+        <Route path="/cart" element={user ? <Cart /> : <Navigate to="/login" replace />} />
       </Routes>
     </Router>
   );

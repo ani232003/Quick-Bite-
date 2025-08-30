@@ -1,76 +1,125 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 .pay_section {
-    background: #fffaf3;
-    padding: 40px 0;
+    background: linear-gradient(135deg, #fffaf3, #fdf2e9);
+    padding: 60px 0;
     font-family: 'Poppins', sans-serif;
 }
 
 form {
     background: #fff;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: transform .2s ease;
+}
+
+form:hover {
+    transform: translateY(-3px);
 }
 
 .pay_col {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .title {
-    font-size: 20px;
+    font-size: 22px;
     color: #e67e22;
     font-weight: 600;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f4d3b2;
+    padding-bottom: 8px;
 }
 
 .inputBox {
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
 
 .inputBox label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
     font-weight: 500;
+    color: #444;
 }
 
 .inputBox input,
 .inputBox select {
     width: 100%;
-    border: 1px solid #ccc;
-    padding: 10px 12px;
+    border: 1px solid #ddd;
+    padding: 12px 14px;
     font-size: 15px;
-    border-radius: 5px;
+    border-radius: 8px;
     outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background: #fafafa;
 }
 
 .inputBox input:focus,
 .inputBox select:focus {
     border-color: #e67e22;
+    box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.15);
+    background: #fff;
 }
 
 .inputBox img {
-    height: 34px;
-    margin-top: 5px;
-    filter: drop-shadow(0 0 1px #000);
+    height: 38px;
+    margin-top: 8px;
+    filter: drop-shadow(0 0 2px #000);
 }
 
 .submit_btn {
     width: 100%;
-    padding: 12px;
+    padding: 14px;
     font-size: 17px;
-    background: #e67e22;
+    font-weight: 600;
+    background: linear-gradient(135deg, #e67e22, #d35400);
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
 }
 
 .submit_btn:hover {
-    background: #cf711f;
+    background: linear-gradient(135deg, #cf711f, #a84300);
+    transform: translateY(-2px);
 }
 
 input::-webkit-inner-spin-button,
 input::-webkit-outer-spin-button {
     display: none;
+}
+
+
+.custom-payment-modal .modal-content {
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    background: #fffaf3;
+}
+
+.modal-body-custom h2 {
+    color: #27ae60;
+    margin-bottom: 15px;
+}
+
+.modal-body-custom p {
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+.modal-body-custom .success-icon {
+    font-size: 70px;
+    color: #27ae60;
+    margin-bottom: 15px;
+}
+
+.modal-body-custom .submit_btn {
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+    background: #e67e22;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 0;
 }

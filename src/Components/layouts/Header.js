@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../../styles/HeaderStyle.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";  // ⬅️ added useLocation
 import logo from "../../Assets/Food_Assets/assets/logo/logo.png";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase.js";
@@ -9,9 +9,10 @@ const Header = ({ user }) => {
   const [isSticky, setIsSticky] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false); 
   const navigate = useNavigate();
+  const location = useLocation();   
 
   useEffect(() => {
-    const handleScroll = () => setIsSticky(window.scrollY > 100);
+    const handleScroll = () => setIsSticky(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -27,9 +28,12 @@ const Header = ({ user }) => {
 
   const handleLinkClick = () => setMenuOpen(false);
 
+
+  const isCartPage = location.pathname === "/cart";
+
   return (
     <header>
-      <nav className={isSticky ? "navbar navbar-expand-lg sticky" : "navbar navbar-expand-lg"}>
+      <nav className={`navbar navbar-expand-lg ${isSticky ? "sticky" : ""} ${isCartPage ? "cart-header" : ""}`}>
         <Link className="logo" to="/">
           <img src={logo} alt="Logo" height="30" className="img-fluid" />
         </Link>
@@ -63,7 +67,7 @@ const Header = ({ user }) => {
               <Link className="nav-link" to="/contact" onClick={handleLinkClick}>CONTACT</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/payment" onClick={handleLinkClick}>
+              <Link className="nav-link" to="/cart" onClick={handleLinkClick}>
                 <i className="bi bi-bag"></i>
               </Link>
             </li>

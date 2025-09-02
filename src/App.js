@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged, getRedirectResult } from "firebase/auth"; // 👈 added getRedirectResult
 import { auth } from "./firebase";
+import { useNavigate } from "react-router-dom"; // 👈 need this
 import { CartProvider } from '../src/Components/CartContext.js';
 
 import Home from "./pages/home/Home";
@@ -20,19 +21,32 @@ import HeaderWrapper from "../src/Components/HeaderWrapper.js";
 
 function App() {
   const [user, setUser] = useState(undefined);
+  const navigate = useNavigate();
 
   useEffect(() => {
+  
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
     });
+
+   
+    getRedirectResult(auth)
+      .then((result) => {
+        if (result?.user) {
+          alert("Login with Google successful!");
+          navigate("/home"); 
+        }
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
+
     return () => unsubscribe();
-  }, []);
+  }, [navigate]);
 
   return (
-  
     <CartProvider>
       <Router>
-        
         <HeaderWrapper user={user} />
 
         <Routes>
@@ -45,8 +59,8 @@ function App() {
           <Route path="/blog" element={user ? <Blog /> : <Navigate to="/login" replace />} />
           <Route path="/contact" element={user ? <Contact /> : <Navigate to="/login" replace />} />
           <Route path="/payment" element={user ? <Pay /> : <Navigate to="/login" replace />} />
-          <Route path="*" element={<Navigate to={user ? "/" : "/login"} replace />} />
           <Route path="/cart" element={user ? <Cart /> : <Navigate to="/login" replace />} />
+          <Route path="*" element={<Navigate to={user ? "/" : "/login"} replace />} />
         </Routes>
       </Router>
     </CartProvider>
